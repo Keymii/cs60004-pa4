@@ -3,7 +3,7 @@ import java.util.Random;
 public class RedundantNullChecks {
     public static void main(String[] args) {
         long startTime = System.nanoTime();
-        for (int i=0; i<1000; i++){
+        for (int i=0; i<100000; i++){
             Random random = new Random();
             int randomNumber = random.nextInt(20); // Random number between 0 and 19
             System.out.println(randomNumber);
