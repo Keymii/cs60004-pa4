@@ -7,7 +7,6 @@ public class RedundantNullChecks {
         for (int i=0; i<99999999; i++){
             Random random = new Random();
             int randomNumber = random.nextInt(20); // Random number between 0 and 19
-            // System.out.println(randomNumber);
             Object obj;
             if (randomNumber < 10) {
                 obj = null;
@@ -16,23 +15,19 @@ public class RedundantNullChecks {
             }
             
             if (obj == null) {
-                // System.out.println("Object is null");
                 a+=1;
                 continue;
             } else {
-                // System.out.println("Object is not null");
                 a-=1;
             }
             
             // Redundant null checks
             // If obj == null, code would not reach here
             if (obj != null) {
-                // System.out.println("Object is not null");
                 a-=1;
             }
 
             if (obj != null) {
-                // System.out.println("Object is not null");
                 a-=1;
             }
         }
