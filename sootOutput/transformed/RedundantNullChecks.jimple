@@ -1,0 +1,121 @@
+public class RedundantNullChecks extends java.lang.Object
+{
+/*RedundantNullChecks.java*/
+
+/*2*/
+    public void <init>()
+    {
+        RedundantNullChecks r0;
+
+        r0 := @this: RedundantNullChecks;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+/*3*/
+
+        return;
+/*3*/
+    }
+
+/*4*/
+    public static void main(java.lang.String[])
+    {
+        java.util.Random $r0;
+        int i0;
+        java.io.PrintStream $r2, $r4, $r5, $r6, $r7, $r8, $r9;
+        java.lang.Object $r3, r11;
+        java.lang.String[] r10;
+
+        r10 := @parameter0: java.lang.String[];
+
+        $r0 = new java.util.Random;
+/*5*/
+
+        specialinvoke $r0.<java.util.Random: void <init>()>();
+/*5*/
+
+        i0 = virtualinvoke $r0.<java.util.Random: int nextInt(int)>(20);
+/*6*/
+/*6*/
+
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+/*7*/
+
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(i0);
+/*7*/
+
+        if i0 >= 10 goto label1;
+/*9*/
+
+        r11 = null;
+/*10*/
+
+        goto label2;
+/*10*/
+
+     label1:
+        $r3 = new java.lang.Object;
+/*12*/
+
+        specialinvoke $r3.<java.lang.Object: void <init>()>();
+/*12*/
+
+        r11 = $r3;
+/*12*/
+
+     label2:
+        if r11 == null goto label3;
+/*16*/
+
+        $r9 = <java.lang.System: java.io.PrintStream out>;
+/*17*/
+
+        virtualinvoke $r9.<java.io.PrintStream: void println(java.lang.String)>("Object is not null");
+/*17*/
+
+        goto label4;
+/*17*/
+
+     label3:
+        $r4 = <java.lang.System: java.io.PrintStream out>;
+/*19*/
+
+        virtualinvoke $r4.<java.io.PrintStream: void println(java.lang.String)>("Object is null");
+/*19*/
+
+     label4:
+        $r8 = <java.lang.System: java.io.PrintStream out>;
+/*23*/
+
+        virtualinvoke $r8.<java.io.PrintStream: void println(java.lang.String)>("Object is null");
+/*23*/
+
+        goto label5;
+/*23*/
+
+        $r5 = <java.lang.System: java.io.PrintStream out>;
+/*25*/
+
+        virtualinvoke $r5.<java.io.PrintStream: void println(java.lang.String)>("Object is not null");
+/*25*/
+
+     label5:
+        $r7 = <java.lang.System: java.io.PrintStream out>;
+/*30*/
+
+        virtualinvoke $r7.<java.io.PrintStream: void println(java.lang.String)>("Object is not null");
+/*30*/
+
+        goto label6;
+/*30*/
+
+        $r6 = <java.lang.System: java.io.PrintStream out>;
+/*32*/
+
+        virtualinvoke $r6.<java.io.PrintStream: void println(java.lang.String)>("Object is null");
+/*32*/
+
+     label6:
+        return;
+/*34*/
+    }
+}
