@@ -4,7 +4,7 @@ public class RedundantNullChecks {
     public static void main(String[] args) {
         long startTime = System.nanoTime();
         int a = 0;
-        for (int i=0; i<100000; i++){
+        for (int i=0; i<999999999; i++){
             Random random = new Random();
             int randomNumber = random.nextInt(20); // Random number between 0 and 19
             // System.out.println(randomNumber);
