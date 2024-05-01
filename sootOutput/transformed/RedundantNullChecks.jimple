@@ -19,14 +19,14 @@ public class RedundantNullChecks extends java.lang.Object
 /*4*/
     public static void main(java.lang.String[])
     {
-        long l0, $l1, l4, l5;
-        java.lang.StringBuilder $r0, $r2, $r3, $r4;
-        java.io.PrintStream $r1, $r8, $r10, $r11, $r12, $r13;
-        java.lang.String $r5;
-        java.util.Random $r6;
-        java.lang.Object $r9, r15;
+        long l0, $l1, l5, l6;
+        java.lang.StringBuilder $r0, $r2, $r3, $r5, $r7, $r8, $r9;
+        java.io.PrintStream $r1, $r6;
+        java.lang.String $r4, $r10;
+        java.util.Random $r11;
+        java.lang.Object $r13, r15;
         java.lang.String[] r14;
-        int i2, i3;
+        int i2, i3, i4;
 
         r14 := @parameter0: java.lang.String[];
 
@@ -37,27 +37,24 @@ public class RedundantNullChecks extends java.lang.Object
         i2 = 0;
 /*6*/
 
+        i3 = 0;
+/*7*/
+
      label1:
-        if i2 >= 1000 goto label6;
-/*6*/
-
-        $r6 = new java.util.Random;
+        if i3 >= 99999999 goto label6;
 /*7*/
 
-        specialinvoke $r6.<java.util.Random: void <init>()>();
-/*7*/
-
-        i3 = virtualinvoke $r6.<java.util.Random: int nextInt(int)>(20);
-/*8*/
+        $r11 = new java.util.Random;
 /*8*/
 
-        $r8 = <java.lang.System: java.io.PrintStream out>;
+        specialinvoke $r11.<java.util.Random: void <init>()>();
+/*8*/
+
+        i4 = virtualinvoke $r11.<java.util.Random: int nextInt(int)>(20);
+/*9*/
 /*9*/
 
-        virtualinvoke $r8.<java.io.PrintStream: void println(int)>(i3);
-/*9*/
-
-        if i3 >= 10 goto label2;
+        if i4 >= 10 goto label2;
 /*11*/
 
         r15 = null;
@@ -67,90 +64,99 @@ public class RedundantNullChecks extends java.lang.Object
 /*12*/
 
      label2:
-        $r9 = new java.lang.Object;
+        $r13 = new java.lang.Object;
 /*14*/
 
-        specialinvoke $r9.<java.lang.Object: void <init>()>();
+        specialinvoke $r13.<java.lang.Object: void <init>()>();
 /*14*/
 
-        r15 = $r9;
+        r15 = $r13;
 /*14*/
 
      label3:
         if r15 != null goto label4;
 /*17*/
 
-        $r13 = <java.lang.System: java.io.PrintStream out>;
-/*18*/
-
-        virtualinvoke $r13.<java.io.PrintStream: void println(java.lang.String)>("Object is null");
+        i2 = i2 + 1;
 /*18*/
 
         goto label5;
 /*19*/
 
      label4:
-        $r10 = <java.lang.System: java.io.PrintStream out>;
+        i2 = i2 + -1;
 /*21*/
 
-        virtualinvoke $r10.<java.io.PrintStream: void println(java.lang.String)>("Object is not null");
-/*21*/
-
-        $r12 = <java.lang.System: java.io.PrintStream out>;
+        i2 = i2 + -1;
 /*27*/
 
-        virtualinvoke $r12.<java.io.PrintStream: void println(java.lang.String)>("Object is not null");
-/*27*/
-
-        $r11 = <java.lang.System: java.io.PrintStream out>;
-/*31*/
-
-        virtualinvoke $r11.<java.io.PrintStream: void println(java.lang.String)>("Object is not null");
+        i2 = i2 + -1;
 /*31*/
 
      label5:
-        i2 = i2 + 1;
-/*6*/
+        i3 = i3 + 1;
+/*7*/
 
         goto label1;
-/*6*/
+/*7*/
 
      label6:
-        l4 = staticinvoke <java.lang.System: long nanoTime()>();
-/*34*/
-/*34*/
-
-        $l1 = l4 - l0;
-/*35*/
-
-        l5 = $l1 / 1000000L;
-/*35*/
-
         $r1 = <java.lang.System: java.io.PrintStream out>;
-/*36*/
+/*34*/
 
         $r0 = new java.lang.StringBuilder;
-/*36*/
+/*34*/
 
         specialinvoke $r0.<java.lang.StringBuilder: void <init>()>();
+/*34*/
+
+        $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("value of a:");
+/*34*/
+
+        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(i2);
+/*34*/
+
+        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.String toString()>();
+/*34*/
+
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r4);
+/*34*/
+
+        l5 = staticinvoke <java.lang.System: long nanoTime()>();
+/*35*/
+/*35*/
+
+        $l1 = l5 - l0;
 /*36*/
 
-        $r2 = virtualinvoke $r0.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Execution time: ");
+        l6 = $l1 / 1000000L;
 /*36*/
 
-        $r3 = virtualinvoke $r2.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>(l5);
-/*36*/
+        $r6 = <java.lang.System: java.io.PrintStream out>;
+/*37*/
 
-        $r4 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" milliseconds");
-/*36*/
+        $r5 = new java.lang.StringBuilder;
+/*37*/
 
-        $r5 = virtualinvoke $r4.<java.lang.StringBuilder: java.lang.String toString()>();
-/*36*/
+        specialinvoke $r5.<java.lang.StringBuilder: void <init>()>();
+/*37*/
 
-        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r5);
-/*36*/
+        $r7 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("Execution time: ");
+/*37*/
+
+        $r8 = virtualinvoke $r7.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>(l6);
+/*37*/
+
+        $r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" milliseconds");
+/*37*/
+
+        $r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>();
+/*37*/
+
+        virtualinvoke $r6.<java.io.PrintStream: void println(java.lang.String)>($r10);
+/*37*/
 
         return;
-/*37*/
+/*38*/
     }
 }
